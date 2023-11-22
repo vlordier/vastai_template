@@ -1,0 +1,23 @@
+ci:
+  autoupdate_schedule: monthly
+
+repos:
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.10.0
+  hooks:
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+- repo: https://github.com/koalaman/shellcheck-precommit
+  rev: v0.9.0
+  hooks:
+  - id: shellcheck
+    args: [--shell=bash]      # Adjust this if you're using a different shell
+- repo: https://github.com/scop/pre-commit-shfmt
+  rev: v3.7.0-1
+  hooks:
+      # Choose one of:
+  - id: shfmt             # native (requires/installs Go to build)
+- repo: https://github.com/detailyang/pre-commit-shell
+  rev: v1.0.6
+  hooks:
+  - id: shell-lint
